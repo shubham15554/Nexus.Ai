@@ -53,7 +53,7 @@ async function generateAndEmitChatTitle(io , chatId, firstUserPrompt) {
 function initializeSocketServer(httpServer) {
     const io = new Server(httpServer, {
         cors: {
-            origin: "http://localhost:5173",
+            origin: ["http://localhost:5173",`https://nexus-ai-steel-psi.vercel.app`],
             methods: ["GET", "POST"],
             credentials: true
         }

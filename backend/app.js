@@ -22,7 +22,7 @@ const chatRoute = require('./routes/chat');
 
 app.use(cors(
   {
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173",`https://nexus-ai-steel-psi.vercel.app`],
     credentials: true,
   }
 ));
