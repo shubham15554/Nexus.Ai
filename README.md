@@ -2,7 +2,7 @@
 
 **Transforming Complex Logic into Intuitive Real-Time Conversations.**
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel%20%2B%20Render-teal?style=for-the-badge&logo=rocket&logoColor=black)]([YOUR_VERCEL_FRONTEND_URL])
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel%20%2B%20Render-teal?style=for-the-badge&logo=rocket&logoColor=black)](YOUR_VERCEL_FRONTEND_URL)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Nexus.ai-0b0c10?style=for-the-badge&logo=github)](https://github.com/shubham15554/Nexus.Ai)
 
 ---
@@ -20,6 +20,33 @@ Born out of a philosophy where deep logical thinking—honed through rigorous re
 
 ---
 
+## 📸 Screenshots & UI Tour
+
+<table width="100%">
+  <tr>
+    <td width="50%" align="center">
+      <img src="./frontend/public/home.png" alt="Dashboard View" width="100%"/>
+      <br/><b>📊 Central Dashboard</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="./frontend/public/login.png" alt="Real-Time Chat View" width="100%"/>
+      <br/><b>💬 Real-Time Chat Interface</b>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="./frontend/public/chatWindow.png" alt="RAG & Context Analytics" width="100%"/>
+      <br/><b>🧠 Memory & Context Injection</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="YOUR_IMAGE_OR_GIF_URL_HERE" alt="Responsive UI" width="100%"/>
+      <br/><b>📱 Mobile Responsive View</b>
+    </td>
+  </tr>
+</table>
+
+---
+
 ## 🛠️ Tech Stack: The Engine Under the Hood
 
 Nexus.ai is a true MERN-stack powerhouse, engineered for production performance and security.
@@ -34,8 +61,6 @@ Nexus.ai is a true MERN-stack powerhouse, engineered for production performance 
 ### Frontend (Deployed on Vercel)
 * **React & Vite:** A lightning-fast development experience and optimized production builds.
 * **Tailwind CSS:** Fully custom, utility-first CSS framework for a responsive and modern UI.
-* **Axios:** Advanced HTTP client handling security (cookies) and API requests.
-* **React Router:** Secure and declarative client-side routing.
 
 ---
 
@@ -43,18 +68,17 @@ Nexus.ai is a true MERN-stack powerhouse, engineered for production performance 
 
 Here’s why Nexus.ai stands out as a serious engineering feat:
 
-### 1. Advanced Full-Stack Security 🔒
-* **Cross-Site Cookie Handling:** Implemented complex production-level CORS (`credentials:true`) and Cookie (`sameSite:'none', secure:true`) settings to allow seamless authentication between Vercel and Render domains. No 401 Unauthorized errors here!
-* **JWT Protected Routes:** Securing critical APIs with middleware that ensures only authenticated users can access their personalized `Session Instances`.
+### 1. Enterprise-Grade Security & Authentication 🔒
+* **Unified JWT Security Protocol:** Engineered an ironclad authentication layer where all critical REST APIs and HTTP routes are strictly locked behind JWT-verified middleware, preventing any unauthenticated data leaks.
+* **Bi-Directional Socket.io Authentication:** Security doesn't stop at HTTP. Implemented secure connection-handshaking middleware on the WebSocket server, ensuring **only authenticated users** can establish socket connections and stream real-time chat data.
+* **Production-Grade Cross-Origin Cookie Architecture:** Configured secure, multi-domain session management utilizing strict CORS parameters (`credentials: true`) combined with cross-site token transmission policies (`sameSite: 'none'`, `secure: true`). This ensures seamless, high-security state persistence between decoupled front-end (Vercel) and back-end (Render) ecosystems.
 
 ### 2. Real-Time Conversational Excellence 💬
 * **Stream Active:** Seamlessly handled Socket.io events for continuous, real-time updates—no annoying page refreshes needed.
-* **Autoscroll & Minimalist UI:** The main Chat Window features custom Tailwind utilities to hide the scrollbar while maintaining full functionality, paired with precise DOM manipulation (useRef/useEffect) to ensure the latest response is always in view.
 
 ### 3. Short-Term Memory (STM) Implementation 🧠
 * **Sliding Window Context:** Built an active short-term memory by fetching the last 10 sequential messages (`.limit(10)`) directly from MongoDB on every incoming message event, preserving chronological accuracy.
 * **Dynamic State Mapping:** Automatically maps messages into standard LLM structured roles (`user` & `model`), ensuring the Gemini API maintains a clear, fluid grasp of immediate, conversational back-and-forth context.
-
 
 ### 4. Long-Term Memory (LTM) via Vector Embeddings 📂
 * **Hybrid Retrieval-Augmented Generation (RAG):** Every single user message and AI response is split and transformed into semantic vectors asynchronously (`generateVector`).
@@ -66,7 +90,7 @@ Here’s why Nexus.ai stands out as a serious engineering feat:
 
 Experience the bawal logic in action!
 
-### 💻 [Click Here for Live Demo]([YOUR_VERCEL_FRONTEND_URL])
+### 💻 [Click Here for Live Demo](YOUR_VERCEL_FRONTEND_URL)
 
 **How to Use:**
 1.  **Signup:** Create your account securely.
@@ -82,7 +106,7 @@ Want to run Nexus.ai locally? Follow these steps:
 
 **Prerequisites:**
 * Node.js (v18+)
-* npm or yarn
+* npm
 * A MongoDB Atlas account
 * A Google Cloud project with the Gemini API enabled and an API key.
 
