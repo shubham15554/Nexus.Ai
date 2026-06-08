@@ -51,11 +51,14 @@ Here’s why Nexus.ai stands out as a serious engineering feat:
 * **Stream Active:** Seamlessly handled Socket.io events for continuous, real-time updates—no annoying page refreshes needed.
 * **Autoscroll & Minimalist UI:** The main Chat Window features custom Tailwind utilities to hide the scrollbar while maintaining full functionality, paired with precise DOM manipulation (useRef/useEffect) to ensure the latest response is always in view.
 
-### 3. Case-Sensitive Production Fixes (Linux Ready) 🚀
-* **Strict Case Sensitivity:** Resolved deep-level deployment issues by configuring the project to be strictly case-sensitive, ensuring perfect compatibility with Render’s Linux-based servers.
+### 3. Short-Term Memory (STM) Implementation 🧠
+* **Sliding Window Context:** Built an active short-term memory by fetching the last 10 sequential messages (`.limit(10)`) directly from MongoDB on every incoming message event, preserving chronological accuracy.
+* **Dynamic State Mapping:** Automatically maps messages into standard LLM structured roles (`user` & `model`), ensuring the Gemini API maintains a clear, fluid grasp of immediate, conversational back-and-forth context.
 
-### 4. Optimized Development Workflow 🔧
-* **Multi-Repo-to-Mono Migration:** Restructured the repository architecture to bundle frontend and backend into a single maintainable repository for streamlined deployment.
+
+### 4. Long-Term Memory (LTM) via Vector Embeddings 📂
+* **Hybrid Retrieval-Augmented Generation (RAG):** Every single user message and AI response is split and transformed into semantic vectors asynchronously (`generateVector`).
+* **Cross-Session Context Injection:** Uses high-dimensional similarity matching via a `queryMemory` layer to retrieve the top 3 most semantically relevant conversational snippets from historical archives. These are dynamically prepended as `system` prompts (`This is a relevant context snippet from a previous user conversation...`), giving Nexus.ai true, permanent cross-session cognitive retention.
 
 ---
 
