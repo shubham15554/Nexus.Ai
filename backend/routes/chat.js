@@ -1,13 +1,13 @@
 
 const router = require("express").Router();
 const User = require("../models/user");
-const authMiddleware = require("../middleware/authMiddleware");
+const authmiddleware = require("../middleware/authmiddleware");
 const {createChat , deleteChat , getChats, getMessages} = require("../controllers/chatController");
 
-router.get("/message/:id" , authMiddleware , getMessages);
-router.get("/" , authMiddleware , getChats);
-router.post("/create" , authMiddleware, createChat);
+router.get("/message/:id" , authmiddleware , getMessages);
+router.get("/" , authmiddleware , getChats);
+router.post("/create" , authmiddleware, createChat);
 
-router.post("/delete" ,authMiddleware, deleteChat);
+router.post("/delete" ,authmiddleware, deleteChat);
 
 module.exports = router;
