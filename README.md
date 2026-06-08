@@ -2,7 +2,7 @@
 
 **Transforming Complex Logic into Intuitive Real-Time Conversations.**
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel%20%2B%20Render-teal?style=for-the-badge&logo=rocket&logoColor=black)](YOUR_VERCEL_FRONTEND_URL)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel%20%2B%20Render-teal?style=for-the-badge&logo=rocket&logoColor=black)]([YOUR_VERCEL_FRONTEND_URL](https://nexus-ai-steel-psi.vercel.app/))
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Nexus.ai-0b0c10?style=for-the-badge&logo=github)](https://github.com/shubham15554/Nexus.Ai)
 
 ---
@@ -30,17 +30,17 @@ Born out of a philosophy where deep logical thinking—honed through rigorous re
     </td>
     <td width="50%" align="center">
       <img src="./frontend/public/login.png" alt="Real-Time Chat View" width="100%"/>
-      <br/><b>💬 Real-Time Chat Interface</b>
+      <br/><b>📱 Login</b>
     </td>
   </tr>
   <tr>
     <td width="50%" align="center">
       <img src="./frontend/public/chatWindow.png" alt="RAG & Context Analytics" width="100%"/>
-      <br/><b>🧠 Memory & Context Injection</b>
+      <br/><b>💬 Real-Time Chat Interfacen</b>
     </td>
     <td width="50%" align="center">
       <img src="./frontend/public/register.png" alt="Responsive UI" width="100%"/>
-      <br/><b>📱 Mobile Responsive View</b>
+      <br/><b>📱 Register</b>
     </td>
   </tr>
 </table>
