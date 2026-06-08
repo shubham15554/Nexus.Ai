@@ -2,7 +2,7 @@
 
 **Transforming Complex Logic into Intuitive Real-Time Conversations.**
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel%20%2B%20Render-teal?style=for-the-badge&logo=rocket&logoColor=black)]([YOUR_VERCEL_FRONTEND_URL](https://nexus-ai-steel-psi.vercel.app/))
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel%20%2B%20Render-teal?style=for-the-badge&logo=rocket&logoColor=black)](https://nexus-ai-steel-psi.vercel.app/)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Nexus.ai-0b0c10?style=for-the-badge&logo=github)](https://github.com/shubham15554/Nexus.Ai)
 
 ---
