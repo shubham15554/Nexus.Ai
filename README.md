@@ -39,7 +39,7 @@ Born out of a philosophy where deep logical thinking—honed through rigorous re
       <br/><b>🧠 Memory & Context Injection</b>
     </td>
     <td width="50%" align="center">
-      <img src="YOUR_IMAGE_OR_GIF_URL_HERE" alt="Responsive UI" width="100%"/>
+      <img src="./frontend/public/register.png" alt="Responsive UI" width="100%"/>
       <br/><b>📱 Mobile Responsive View</b>
     </td>
   </tr>
@@ -90,7 +90,7 @@ Here’s why Nexus.ai stands out as a serious engineering feat:
 
 Experience the bawal logic in action!
 
-### 💻 [Click Here for Live Demo](YOUR_VERCEL_FRONTEND_URL)
+### 💻 [Click Here for Live Demo](https://nexus-ai-steel-psi.vercel.app/)
 
 **How to Use:**
 1.  **Signup:** Create your account securely.
