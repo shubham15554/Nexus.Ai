@@ -21,7 +21,9 @@ export function  SocketProvider({children}){
 
     return (
         
-        (!socket) ? <p>Socket is connecting</p>
+        (!socket) ?  <div className="flex justify-center items-center h-screen bg-white">
+        <div className="w-10 h-10 border-4 border-rose-500 border-t-transparent rounded-full animate-spin"></div>
+      </div>
         :<SocketContext.Provider value={{socket} } >
          {children}
         </SocketContext.Provider>
