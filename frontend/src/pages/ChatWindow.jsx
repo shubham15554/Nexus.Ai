@@ -17,7 +17,17 @@ export default function ChatWindow() {
   const {socket} = useContext(SocketContext);
   
   
-  
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
   
 
   useEffect(() => {
@@ -129,8 +139,8 @@ export default function ChatWindow() {
           </div>
         </header>
 
-        {/* 💬 Actual Chat Messages Area */}
-        <main className="flex-1 overflow-y-auto p-6 space-y-6 max-w-3xl w-full mx-auto relative z-10">
+       
+        <main className="flex-1 overflow-y-auto p-6 space-y-6 max-w-3xl w-full mx-auto relative z-10 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {messages.map((msg, index) => (
             <div key={index} className={`flex gap-4 ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
               {msg.role !== 'user' && (
@@ -147,9 +157,9 @@ export default function ChatWindow() {
               </div>
             </div>
           ))}
+          <div ref={messagesEndRef} />
         </main>
 
-        {/* Persistent Bottom Chat Bar Container */}
         <div className="max-w-3xl w-full mx-auto p-6 pt-0 relative z-20 flex-shrink-0">
           <form onSubmit={handleSendMessage} className="bg-[#13151a]/90 backdrop-blur-xl border border-zinc-800 rounded-2xl p-3 flex items-center justify-between shadow-2xl focus-within:border-emerald-500/30 transition-all duration-300">
             <input 

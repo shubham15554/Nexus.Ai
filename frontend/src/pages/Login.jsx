@@ -25,13 +25,11 @@ export default function Login() {
   return (
     <div className="min-h-screen bg-[#0b0c10] flex text-zinc-100 font-sans selection:bg-emerald-500/30 selection:text-emerald-400">
       
-      {/* LEFT SIDE: Brand & Aesthetic AI Panel (Hidden on mobile) */}
       <div className="hidden lg:flex lg:w-1/2 bg-[#0e1117] relative flex-col justify-between p-12 overflow-hidden border-r border-zinc-900">
-        {/* Background Decorative Gradients */}
+ 
         <div className="absolute bottom-[-20%] right-[-20%] w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[140px] pointer-events-none" />
         <div className="absolute top-[-10%] left-[-15%] w-[500px] h-[500px] bg-emerald-600/10 rounded-full blur-[120px] pointer-events-none" />
         
-        {/* Top Logo */}
         <div className="flex items-center gap-3 relative z-10">
           <div className="w-9 h-9 bg-gradient-to-tr from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center shadow-lg shadow-emerald-500/10">
             <Bot className="w-5 h-5 text-black stroke-[2]" />
@@ -75,13 +73,13 @@ export default function Login() {
         </div>
       </div>
 
-      {/* RIGHT SIDE: The Login Form Panel */}
+ 
       <div className="w-full lg:w-1/2 flex items-center justify-center p-6 sm:p-12 relative">
-        {/* Subtle background glow for mobile layout */}
+ 
         <div className="absolute lg:hidden bottom-[-10%] left-[-10%] w-[300px] h-[300px] bg-blue-500/10 rounded-full blur-[80px] pointer-events-none" />
 
         <div className="w-full max-w-md space-y-8">
-          {/* Header */}
+
           <div>
             <h1 className="text-3xl font-bold tracking-tight">Sign in</h1>
             <p className="text-zinc-400 text-sm mt-2">
@@ -89,7 +87,7 @@ export default function Login() {
             </p>
           </div>
 
-          {/* Form */}
+
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label className="block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-2">
@@ -131,7 +129,7 @@ export default function Login() {
               </div>
             </div>
 
-            {/* Remember Me Option */}
+          
             <div className="flex items-center gap-2.5 pt-1">
               <input
                 type="checkbox"
@@ -143,7 +141,7 @@ export default function Login() {
               </label>
             </div>
 
-            {/* Submit Button */}
+
             <button
               type="submit"
               className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-black font-semibold py-3 px-4 rounded-xl flex items-center justify-center gap-2 group shadow-lg shadow-emerald-950/20 active:scale-[0.99] transition-all duration-150"
@@ -153,7 +151,6 @@ export default function Login() {
             </button>
           </form>
 
-          {/* Bottom Link */}
           <p className="text-center text-sm text-zinc-500">
             New to the platform?{' '}
             <a href="/signup" className="text-emerald-400 font-medium hover:underline">

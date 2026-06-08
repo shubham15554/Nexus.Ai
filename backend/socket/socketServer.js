@@ -10,7 +10,7 @@ const message = require("../models/message");
 const user = require("../models/user");
 
 const Chat = require("../models/chat");
-// Standalone Helper Function for Background Title Generation
+
 async function generateAndEmitChatTitle(io , chatId, firstUserPrompt) {
     try {
         const currentChat = await Chat.findById(chatId);

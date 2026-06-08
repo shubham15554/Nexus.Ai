@@ -5,8 +5,6 @@ const jwt = require('jsonwebtoken');
 const {registerUser , login , getProfile} = require("../controllers/authController");
 const generateToken = require("../utils/generateToken");
 
-// Register
-
 router.post("/register" , registerUser);
 router.post("/login" , login);
 router.get("/profile" , getProfile)
