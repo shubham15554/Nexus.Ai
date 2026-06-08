@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkUserOnRefresh = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/api/auth/profile", { withCredentials: true });
+        const res = await axios.get("https://nexus-ai-26rh.onrender.com/api/auth/profile", { withCredentials: true });
         if (res.data.user) {
           setUser(res.data.user);
         }
@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
   const handleRegister = async (username, email, password) => {
     try {
       setLoading(true);
-      let res = await axios.post("http://localhost:8000/api/auth/register", { username, email, password }, { withCredentials: true });
+      let res = await axios.post("https://nexus-ai-26rh.onrender.com/api/auth/register", { username, email, password }, { withCredentials: true });
 
       if (res.data.success) {
         setUser(res.data.user);
@@ -51,7 +51,7 @@ export const AuthProvider = ({ children }) => {
   const handleLogin = async (email, password) => {
     try {
       setLoading(true);
-      let res = await axios.post("http://localhost:8000/api/auth/login", { email, password }, { withCredentials: true });
+      let res = await axios.post("https://nexus-ai-26rh.onrender.com/api/auth/login", { email, password }, { withCredentials: true });
       console.log("login result of context" , res);
       if (res.data.success) {
         setUser(res.data.user);

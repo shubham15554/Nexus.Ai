@@ -23,7 +23,7 @@ export default function ChatWindow() {
   useEffect(() => {
     const fetchMessages = async ()=>{
       try{
-      let res = await axios.get(`http://localhost:8000/api/chat/message/${id}` , {withCredentials: true});
+      let res = await axios.get(`https://nexus-ai-26rh.onrender.com/api/chat/message/${id}` , {withCredentials: true});
       setMessages(res.data.messages);
       }
       catch(err){

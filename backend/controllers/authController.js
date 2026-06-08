@@ -28,6 +28,12 @@ module.exports.registerUser = async (req , res) => {
 
         await newUser.save();
         let token = generateToken(newUser._id);
+        res.cookie("token", token, {
+            httpOnly: true,         
+            secure: false,           
+            sameSite: "lax",       
+            maxAge: 24 * 60 * 60 * 1000, 
+        });
         
         return res.status(201).json({msg : "User registered successfully", user: newUser , success : true});
 
@@ -60,7 +66,12 @@ module.exports.login = async (req , res)=>{
         }
 
         let token = generateToken(user._id);
-        res.cookie("token" , token);
+        res.cookie("token", token, {
+            httpOnly: true,         
+            secure: false,           
+            sameSite: "lax",       
+            maxAge: 24 * 60 * 60 * 1000, 
+        });
 
         return res.status(200).json({msg : "Login successful", user: user , success : true});
     }

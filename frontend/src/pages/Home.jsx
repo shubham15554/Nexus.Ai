@@ -29,7 +29,7 @@ export default function Home() {
     e.preventDefault();
     if (!prompt.trim()) return;
     try{
-        let res = await axios.post("http://localhost:8000/api/chat/create", { title: "New Chat" }, { withCredentials: true });
+        let res = await axios.post("https://nexus-ai-26rh.onrender.com/api/chat/create", { title: "New Chat" }, { withCredentials: true });
         let newChatId = await res.data.chat._id;
         navigate(`/chat/${newChatId}`, { state: { initialPrompt: prompt.trim() } });
         setPrompt('');

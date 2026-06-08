@@ -15,7 +15,7 @@ export default function Sidebar({ isOpen, onClose }) {
   const {socket} = useContext(SocketContext);
   const fetchChats = async () => {
     try {
-      let res = await axios.get("http://localhost:8000/api/chat", {withCredentials: true});
+      let res = await axios.get("https://nexus-ai-26rh.onrender.com/api/chat", {withCredentials: true});
       let data = await res.data.chats;
 
       setChats(data);
@@ -26,7 +26,7 @@ export default function Sidebar({ isOpen, onClose }) {
 
     const newChat = async () => {
       try {
-        let res = await axios.post("http://localhost:8000/api/chat/create", { title: "New Chat" }, { withCredentials: true });
+        let res = await axios.post("https://nexus-ai-26rh.onrender.com/api/chat/create", { title: "New Chat" }, { withCredentials: true });
         let data = await res.data.chat;
         console.log("New chat created:", data);
         setChats((prevChats) => [...prevChats, data]);
@@ -40,7 +40,7 @@ export default function Sidebar({ isOpen, onClose }) {
     const handleDeleteChat = async (chatId) => {
       try {
         console.log(chatId);
-        await axios.post(`http://localhost:8000/api/chat/delete`, {id : chatId}, { withCredentials: true });
+        await axios.post(`https://nexus-ai-26rh.onrender.com/api/chat/delete`, {id : chatId}, { withCredentials: true });
         setChats((prevChats) => prevChats.filter((chat) => chat._id !== chatId));
       }
       catch (error) {

@@ -10,7 +10,7 @@ export function  SocketProvider({children}){
 
     useEffect(()=>{
 
-      const newSocket = io("http://localhost:8000", {
+      const newSocket = io("https://nexus-ai-26rh.onrender.com", {
         transports: ["websocket"], 
         withCredentials: true
       });
