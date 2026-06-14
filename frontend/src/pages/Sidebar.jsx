@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import axios from 'axios';
 import { SocketContext } from '../cotexts/socketContext';
+import { AuthContext } from '../cotexts/authContext';
 import {toast} from 'react-toastify';
 export default function Sidebar({ isOpen, onClose }) {
     
@@ -13,6 +14,7 @@ export default function Sidebar({ isOpen, onClose }) {
   const [chats , setChats] = useState([] );
 
   const {socket} = useContext(SocketContext);
+  const {user} = useContext(AuthContext);
   const fetchChats = async () => {
     try {
       let res = await axios.get("https://nexus-ai-26rh.onrender.com/api/chat", {withCredentials: true});
@@ -23,6 +25,18 @@ export default function Sidebar({ isOpen, onClose }) {
       console.error("Error fetching chats:", error);
     }
     };
+
+    const handleLogout = async ()=>{
+      console.log("logout clicked");
+        try{
+            let res = axios.post("https://nexus-ai-26rh.onrender.com/api/auth/logout" ,{withCredentials: true} );
+            toast(res.data.message);
+        }
+        catch(err){
+          console.log(err);
+          toast.error("Something went wrong")
+        }
+    }
 
     const newChat = async () => {
       try {
@@ -126,7 +140,7 @@ export default function Sidebar({ isOpen, onClose }) {
                     e.stopPropagation();
                       handleDeleteChat(chat._id);
                     }}
-                    className="p-1.5 text-zinc-600 hover:text-rose-400 rounded-md hover:bg-zinc-900/50 opacity-0 group-hover:opacity-100 transition-all duration-200 cursor-pointer"
+                    className="p-1.5 text-rose-400 rounded-md hover:bg-zinc-900/50 group-hover:opacity-100 transition-all duration-200 cursor-pointer"
                     title="Delete Chat"
                 >
                     <Trash2 className="w-3.5 h-3.5" />
@@ -141,9 +155,9 @@ export default function Sidebar({ isOpen, onClose }) {
           <button className="w-full text-left text-xs text-zinc-500 hover:text-zinc-300 px-3 py-2 rounded-lg flex items-center gap-2.5 transition-colors">
             <Settings className="w-4 h-4" /> Settings
           </button>
-          <button className="w-full text-left text-xs text-rose-500/80 hover:text-rose-400 px-3 py-2 rounded-lg flex items-center gap-2.5 transition-colors">
-            <LogOut className="w-4 h-4" /> Terminate Session
-          </button>
+          {user &&  <button  onClick={handleLogout} className="w-full text-left text-xs text-rose-500/80 hover:text-rose-400 px-3 py-2 rounded-lg flex items-center gap-2.5 transition-colors">
+            <LogOut className="w-4 h-4" /> Logout
+          </button>}
         </div>
       </aside>
 
