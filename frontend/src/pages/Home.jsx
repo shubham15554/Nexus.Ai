@@ -111,6 +111,7 @@ export default function Home() {
           </div>
         </nav>
 
+
         <main className="flex-1 flex flex-col items-center justify-center max-w-3xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-12 relative z-10 space-y-6 sm:space-y-10 overflow-y-auto">
           
           <div className="text-center space-y-2 sm:space-y-3 max-w-xl">
